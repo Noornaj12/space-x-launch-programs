@@ -1,1 +1,60 @@
-<app-space-x-launch-programs></app-space-x-launch-programs>
+<div class="container-fluid">
+    <header>
+        <h1 class="main-heading">SpaceX Launch Programs</h1>
+    </header>
+    <div class="row pl-3">
+        <div class="col-md-2 col-11 card m-h-700 mb-3 pb-5">
+            <h2 class="bold-font">Filters</h2>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="normal-font">Launch Year</h3>
+                    <hr class="mt-0">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-flex justify-content-center" *ngFor="let year of launchYears">
+                    <button [class.active]="year === selectedFilters.launch_year" type="button" class="btn btn-success mb-2" (click)="filterPrograms('launch_year',year)">{{year}}</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center mt-4">
+                    <h3 class="normal-font">Successful Launch</h3>
+                    <hr class="mt-0">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-flex justify-content-center">
+                    <button [class.active]="selectedFilters.launch_success === true" type="button" class="btn btn-success" (click)="filterPrograms('launch_success', true)">True</button>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <button [class.active]="selectedFilters.launch_success === false" type="button" class="btn btn-success" (click)="filterPrograms('launch_success', false)">False</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center mt-4">
+                    <h3 class="normal-font">Successful Landing</h3>
+                    <hr class="mt-0">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-flex justify-content-center">
+                    <button [class.active]="selectedFilters.land_success === true" type="button" class="btn btn-success" (click)="filterPrograms('land_success', true)">True</button>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <button [class.active]="selectedFilters.land_success === false" type="button" class="btn btn-success" (click)="filterPrograms('land_success', false)">False</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-12 text-center mb-4 mt-3">
+                <span aria-label="Developed by" class="font-weight-bold">Developed by:</span>
+                <span aria-label="Noornaj Bano">Noornaj Bano</span>
+            </div>
+        </div>
+    </footer>
+</div>

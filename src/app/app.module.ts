@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SpaceXLaunchProgramsComponent } from './space-x-launch-programs/space-x-launch-programs.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CommonModule,
     HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
