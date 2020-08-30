@@ -24,7 +24,6 @@ export class SpaceXLaunchProgramsComponent implements OnInit {
     this.spaceXService.getSpaceXLaunchPrograms(this.selectedFilters).subscribe((data: any) => {
       this.spaceData = data;
       this.loading = false;
-      this.cdr.markForCheck();
     },
       err => {
         console.log(err);
