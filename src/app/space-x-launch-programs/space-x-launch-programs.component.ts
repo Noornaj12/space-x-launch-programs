@@ -1,11 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SpaceXLaunchProgramsService } from './space-x-launch-programs.service';
 
 @Component({
   selector: 'app-space-x-launch-programs',
   templateUrl: './space-x-launch-programs.component.html',
-  styleUrls: ['./space-x-launch-programs.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./space-x-launch-programs.component.css']
 })
 export class SpaceXLaunchProgramsComponent implements OnInit {
 
@@ -14,7 +13,7 @@ export class SpaceXLaunchProgramsComponent implements OnInit {
   public selectedFilters: any = {};
   public spaceData: any;
 
-  constructor(private cdr: ChangeDetectorRef, private spaceXService: SpaceXLaunchProgramsService) { }
+  constructor(private spaceXService: SpaceXLaunchProgramsService) { }
 
   ngOnInit(): void {
     this.getAllSpaceXLaunchPrograms(true);
