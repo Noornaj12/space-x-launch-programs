@@ -11,6 +11,7 @@ import { SpaceXLaunchProgramsComponent } from './space-x-launch-programs.compone
 import { SpaceXLaunchProgramsService } from './space-x-launch-programs.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Injectable()
 class MockSpaceXLaunchProgramsService {
   getSpaceXLaunchPrograms(param?: any) {
@@ -29,17 +30,17 @@ describe('SpaceXLaunchProgramsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule, ReactiveFormsModule ],
+      imports: [FormsModule, ReactiveFormsModule],
       declarations: [
         SpaceXLaunchProgramsComponent
       ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
       providers: [
         { provide: SpaceXLaunchProgramsService, useClass: MockSpaceXLaunchProgramsService },
         {
           provide: ActivatedRoute,
           useValue: {
-            snapshot: {url: 'url', params: {}, queryParams: {}, data: {}},
+            snapshot: { url: 'url', params: {}, queryParams: {}, data: {} },
             url: observableOf('url'),
             params: observableOf({}),
             queryParams: observableOf({}),
@@ -56,7 +57,7 @@ describe('SpaceXLaunchProgramsComponent', () => {
   });
 
   afterEach(() => {
-    component.ngOnDestroy = function() {};
+    component.ngOnDestroy = function () { };
     fixture.destroy();
   });
 
@@ -81,7 +82,7 @@ describe('SpaceXLaunchProgramsComponent', () => {
 
   it('should run #trackByIndex()', async () => {
     spyOn(component, 'trackByIndex');
-    component.trackByIndex(1,'program1');
+    component.trackByIndex(1, 'program1');
     expect(component.trackByIndex).toHaveBeenCalled();
   });
 

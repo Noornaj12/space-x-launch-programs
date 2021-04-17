@@ -3,16 +3,20 @@
         <div class="col-xl-3 col-lg-6 col-12" *ngFor="let program of spaceData;let i= index trackBy: trackByIndex">
             <div class="card p-3 mb-2">
                 <div class="gray-background">
-                    <img class="card-img-top" [src]="program.links.mission_patch_small" [alt]="program.rocket.rocket_name" style="width:100%">
+                    <img class="card-img-top" [src]="program.links.mission_patch_small"
+                        [alt]="program.rocket.rocket_name" style="width:100%">
                 </div>
                 <div>
-                    <h4 class="card-title theme-purple mt-2 font-weight-bold normal-font">{{program?.mission_name}} #{{program?.flight_number}}</h4>
+                    <h4 class="card-title theme-purple mt-2 font-weight-bold normal-font">{{program?.mission_name}}
+                        #{{program?.flight_number}}</h4>
                     <div>
                         <h5 class="font-weight-bold normal-font">Mission Ids:</h5>
                         <ul *ngIf="program && program.mission_id && program.mission_id.length>0">
-                            <li class="theme-purple normal-font" *ngFor="let missionId of program.mission_id">{{missionId}}</li>
+                            <li class="theme-purple normal-font" *ngFor="let missionId of program.mission_id">
+                                {{missionId}}</li>
                         </ul>
                     </div>
+
                     <div class="d-flex">
                         <h5 class="font-weight-bold normal-font">Launch Year: </h5>
                         <p class="theme-purple normal-font line-height-sm">{{program?.launch_year}}</p>
@@ -23,7 +27,8 @@
                     </div>
                     <div class="d-flex">
                         <h5 class="font-weight-bold normal-font">Successful Landing: </h5>
-                        <p class="theme-purple normal-font line-height-sm">{{program?.rocket.first_stage.cores[0].land_success}}</p>
+                        <p class="theme-purple normal-font line-height-sm">
+                            {{program?.rocket.first_stage.cores[0].land_success}}</p>
                     </div>
                 </div>
             </div>
